@@ -31,16 +31,16 @@ public class Form extends JFrame {
 		header = new JLabel("Generieren Sie ein Fantasyname");
 		
 		name = new JLabel("Geben Sie Ihren Vorname ein:");
-		name_field = new JTextField();
+		name_field = new JTextField(3);
 		
 		surname = new JLabel("Geben Sie Ihren Nachname ein:");
-		surname_field = new JTextField();
+		surname_field = new JTextField(3);
 		
 		birthday_day = new JLabel("Geben Sie Ihr Geburtstag ein:");
-		birthday_day_field = new JTextField();
+		birthday_day_field = new JTextField(2);
 		
 		birthday_month = new JLabel("Geben Sie Ihr Geburtsmonat ein:");
-		birthday_month_field = new JTextField();
+		birthday_month_field = new JTextField(2);
 		
 		sex = new JLabel("Geben Sie Ihr Geschlecht ein:");
 		radio_male = new JRadioButton("Männlich", true);
@@ -171,8 +171,6 @@ public class Form extends JFrame {
 				isError = false;
 			}
 			
-			// name_field_array[], surname_field_array[]
-			
 			if (name_field_array.length < 3) {
 				isError = true;
 				JOptionPane.showMessageDialog(null, "Ein Vorname ist zu kurz.", "Fehler", JOptionPane.PLAIN_MESSAGE);
@@ -187,6 +185,12 @@ public class Form extends JFrame {
 				surname_field.setText("");
 			} else {
 				isError = false;
+			}
+			
+			for (i = 0; i < name_field_array.length; i++) {
+				//if (name_field_array[i] instanceof char) {
+					//isError = true;
+				//};
 			}
 			
 			System.out.println(isError);
