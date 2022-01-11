@@ -20,7 +20,7 @@ public class Form extends JFrame {
 
 	public Form() {
 		
-		super("Title: Umfrage");
+		super("Fantasyname");
 		super.setBounds(200, 200, 300, 550);
 		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -91,43 +91,33 @@ public class Form extends JFrame {
 			is_you_female = radio_female.getText();
 			is_you_divers = radio_divers.getText();
 			
-			System.out.println(your_name);
-			System.out.println(your_surname);
-			System.out.println(your_birthday_day);
-			System.out.println(your_birthday_month);
-			System.out.println(is_you_male);
-			System.out.println(is_you_female);
-			System.out.println(is_you_divers);
-			
 			name_field_array = your_name.toCharArray();
 			surname_field_array = your_surname.toCharArray();
-			
-			System.out.println(name_field_array);
 			
 			if (your_birthday_day <= 15) {
 				if (name_field_array.length >= 4) {
 					fantasyname = fantasyname + name_field_array[1] + name_field_array[2] + name_field_array[3];
 				} else {
-					fantasyname = fantasyname + name_field_array[1] + name_field_array[2] + "e";
+					fantasyname = fantasyname + name_field_array[1] + name_field_array[2] + "l";
 				}
 				
 				if (surname_field_array.length >= 4) {
 					fantasyname = fantasyname + surname_field_array[1] + surname_field_array[2] + surname_field_array[3];
 				} else {
-					fantasyname = fantasyname + surname_field_array[1] + surname_field_array[2] + "o";
+					fantasyname = fantasyname + surname_field_array[1] + surname_field_array[2] + "s";
 				}
 				
 			} else {
 				if (surname_field_array.length >= 4) {
 					fantasyname = fantasyname + surname_field_array[1] + surname_field_array[2] + surname_field_array[3];
 				} else {
-					fantasyname = fantasyname + surname_field_array[1] + surname_field_array[2] + "o";
+					fantasyname = fantasyname + surname_field_array[1] + surname_field_array[2] + "l";
 				}
 				
 				if (name_field_array.length >= 4) {
 					fantasyname = fantasyname + name_field_array[1] + name_field_array[2] + name_field_array[3];
 				} else {
-					fantasyname = fantasyname + name_field_array[1] + name_field_array[2] + "e";
+					fantasyname = fantasyname + name_field_array[1] + name_field_array[2] + "s";
 				}
 			}
 			
@@ -155,42 +145,24 @@ public class Form extends JFrame {
 			
 			// Fehler bearbeiten
 			
-			if (your_birthday_day < 1 || your_birthday_day > 12) {
+			if (your_birthday_day < 1 || your_birthday_day > 31) {
 				isError = true;
 				JOptionPane.showMessageDialog(null, "Ein Tag soll zwischen 1 und 31 sein.", "Fehler", JOptionPane.PLAIN_MESSAGE);
 				birthday_day_field.setText("");
-			} else {
-				isError = false;
-			}
-			
-			if (your_birthday_month < 1 || your_birthday_month > 12) {
+			} else if (your_birthday_month < 1 || your_birthday_month > 12) {
 				isError = true;
 				JOptionPane.showMessageDialog(null, "Ein Monat soll zwischen 1 und 12 sein.", "Fehler", JOptionPane.PLAIN_MESSAGE);
 				birthday_month_field.setText("");
-			} else {
-				isError = false;
-			}
-			
-			if (name_field_array.length < 3) {
+			} else if (name_field_array.length < 3) {
 				isError = true;
 				JOptionPane.showMessageDialog(null, "Ein Vorname ist zu kurz.", "Fehler", JOptionPane.PLAIN_MESSAGE);
 				name_field.setText("");
-			} else {
-				isError = false;
-			}
-			
-			if (surname_field_array.length < 3) {
+			} else if (surname_field_array.length < 3) {
 				isError = true;
 				JOptionPane.showMessageDialog(null, "Ein Nachname ist zu kurz.", "Fehler", JOptionPane.PLAIN_MESSAGE);
 				surname_field.setText("");
 			} else {
 				isError = false;
-			}
-			
-			for (i = 0; i < name_field_array.length; i++) {
-				//if (name_field_array[i] instanceof char) {
-					//isError = true;
-				//};
 			}
 			
 			System.out.println(isError);
@@ -199,9 +171,7 @@ public class Form extends JFrame {
 				JOptionPane.showMessageDialog(null, "" + fantasyname + " " + fantasy_surname, "Ihr Fantasiename", JOptionPane.PLAIN_MESSAGE);
 			}
 
-			
 		}
-		
 		
 	}
 	
