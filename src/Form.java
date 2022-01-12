@@ -79,7 +79,7 @@ public class Form extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			String your_name, your_surname, is_you_male, is_you_female, is_you_divers, fantasyname = "", fantasy_surname = "";
+			String your_name, your_surname, fantasyname = "", fantasy_surname = "";
 			char name_field_array[], surname_field_array[];
 			int your_birthday_day, your_birthday_month;
 			
@@ -87,9 +87,6 @@ public class Form extends JFrame {
 			your_surname = surname_field.getText();
 			your_birthday_day = Integer.parseInt (birthday_day_field.getText());
 			your_birthday_month = Integer.parseInt (birthday_month_field.getText());
-			is_you_male = radio_male.getText();
-			is_you_female = radio_female.getText();
-			is_you_divers = radio_divers.getText();
 			
 			name_field_array = your_name.toCharArray();
 			surname_field_array = your_surname.toCharArray();
